@@ -1,51 +1,25 @@
-
-// import LoginForm from "../component/loginForm";
-// import LoginHeader from "../component/loginHeader";
-// import HeroSection from "../component/heroSection";
-
-// const LoginPage = () => {
-//   return (
-//     <div className="min-h-screen bg-gray-100 flex items-center justify-center p-8">
-
-//       <div className="w-full max-w-6xl bg-white rounded-3xl shadow-2xl overflow-hidden">
-
-//         <div className="grid lg:grid-cols-2 min-h-[700px]">
-
-//           {/* Left */}
-//           <div className="flex flex-col justify-center px-16 py-12">
-
-//           <LoginHeader />
-
-//             <div className="mt-10">
-//               <LoginForm />
-//             </div>
-
-//           </div>
-
-//           {/* Right */}
-//           <HeroSection />
-
-//         </div>
-
-//       </div>
-
-//     </div>
-//   );
-// };
-
-// export default LoginPage;
-
+import BrandHeader from "../component/BrandHeader";
 import HeroSection from "../component/HeroSection";
 import LoginForm from "../component/LoginForm";
+import LoginFooter from "../component/LoginFooter";
 
 export default function LoginPage() {
   return (
-    <div className="min-h-screen bg-slate-100 flex items-center justify-center p-6">
-      <div className="w-full max-w-7xl overflow-hidden rounded-3xl bg-white shadow-xl">
-        <div className="grid min-h-[750px] grid-cols-2">
-          <LoginForm />
-          <HeroSection />
+    <div className="flex min-h-screen flex-col bg-[#f5f6f8] px-4 py-6 sm:px-8 lg:px-12">
+      <div className="mx-auto flex w-full max-w-6xl flex-1 flex-col">
+        <BrandHeader />
+
+        <div className="overflow-hidden rounded-[28px] bg-white shadow-[0_20px_60px_rgba(15,23,42,0.08)]">
+          {/* Keep visual order: form left, hero right (matches design) */}
+          <div className="grid min-h-[640px] grid-cols-1 lg:grid-cols-2" dir="ltr">
+            <div dir="rtl">
+              <LoginForm />
+            </div>
+            <HeroSection />
+          </div>
         </div>
+
+        <LoginFooter />
       </div>
     </div>
   );

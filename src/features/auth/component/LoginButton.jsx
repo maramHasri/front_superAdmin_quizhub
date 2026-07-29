@@ -1,22 +1,16 @@
+import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 
-export default function LoginButton() {
+export default function LoginButton({ isLoading = false }) {
+  const { t } = useTranslation();
+
   return (
     <Button
       type="submit"
-      className="
-        w-full
-        h-12
-        rounded-xl
-        bg-cyan-600
-        hover:bg-cyan-700
-        text-white
-        text-base
-        font-semibold
-        transition
-      "
+      disabled={isLoading}
+      className="h-12 w-full rounded-xl bg-brand text-base font-semibold text-white shadow-none transition hover:bg-brand-dark"
     >
-      Log In
+      {isLoading ? t("auth.loggingIn") : t("auth.login")}
     </Button>
   );
 }

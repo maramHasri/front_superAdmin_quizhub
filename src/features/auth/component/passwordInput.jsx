@@ -1,37 +1,47 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Eye, EyeOff } from "lucide-react";
 import { Input } from "@/components/ui/input";
 
-export default function PasswordInput() {
+export default function PasswordInput({ value, onChange }) {
+  const { t } = useTranslation();
   const [showPassword, setShowPassword] = useState(false);
 
   return (
-    <div className="space-y-2">
-      <label
-        htmlFor="password"
-        className="text-sm font-medium text-slate-700"
-      >
-        Password
-      </label>
+    <div className="space-y-2 text-start">
+      <div className="flex items-center justify-between gap-3">
+        <label htmlFor="password" className="text-sm font-medium text-slate-600">
+          {t("auth.password")}
+        </label>
+
+        <button
+          type="button"
+          className="text-sm font-medium text-brand transition hover:text-brand-dark"
+        >
+          {t("auth.forgotPassword")}
+        </button>
+      </div>
 
       <div className="relative">
         <Input
           id="password"
+          name="password"
           type={showPassword ? "text" : "password"}
-          placeholder="Enter your password"
-          className="h-12 rounded-xl pr-12"
+          autoComplete="current-password"
+          value={value}
+          onValueChange={onChange}
+          onChange={(event) => onChange(event.target.value)}
+          placeholder={t("auth.passwordPlaceholder")}
+          className="h-12 rounded-xl border-transparent bg-[#f3f4f6] px-4 pe-12 text-slate-700 shadow-none placeholder:text-slate-400 focus-visible:border-brand focus-visible:ring-brand/30"
         />
 
         <button
           type="button"
           onClick={() => setShowPassword(!showPassword)}
-          className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600"
+          className="absolute end-4 top-1/2 -translate-y-1/2 text-slate-400 transition hover:text-slate-600"
+          aria-label={showPassword ? "Hide password" : "Show password"}
         >
-          {showPassword ? (
-            <EyeOff size={18} />
-          ) : (
-            <Eye size={18} />
-          )}
+          {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
         </button>
       </div>
     </div>

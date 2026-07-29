@@ -1,33 +1,16 @@
-// const LoginHeader = () => {
-//   return (
-//     <div className="space-y-2">
-
-//       <h1 className="text-4xl font-bold text-slate-900">
-//         Welcome Back
-//       </h1>
-
-//       <p className="text-gray-500">
-//         Welcome back! Please enter your details.
-//       </p>
-
-//     </div>
-//   );
-// };
-
-// export default LoginHeader;
-
-
+import { useTranslation } from "react-i18next";
 
 export default function LoginHeader() {
-  return (
-    <div className="mb-10">
-      <h1 className="text-4xl font-bold tracking-tight text-slate-900">
-        System Management Center
-      </h1>
+  const { t } = useTranslation();
 
-      <p className="mt-3 text-sm leading-6 text-slate-500">
-        Log in to securely manage users, monitor activity, and oversee
-        platform operations from one centralized dashboard.
+  return (
+    <div className="mb-8 text-start">
+      <h2 className="text-[1.75rem] font-bold leading-tight text-slate-800">
+        {t("auth.title")}
+      </h2>
+
+      <p className="mt-3 text-sm leading-7 text-slate-400">
+        {t("auth.subtitle")}
       </p>
     </div>
   );

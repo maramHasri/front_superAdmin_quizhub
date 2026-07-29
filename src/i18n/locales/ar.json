@@ -1,0 +1,36 @@
+{
+  "auth": {
+    "brand": "QuizHub",
+    "tagline": "ملاذك الأكاديمي",
+    "title": "مركز إدارة النظام",
+    "subtitle": "الرجاء تسجيل الدخول باستخدام بيانات مدير النظام المصرّح بها",
+    "email": "البريد الإلكتروني",
+    "emailPlaceholder": "dr.smith@university.edu",
+    "password": "كلمة سر",
+    "passwordPlaceholder": "••••••••",
+    "rememberMe": "خليك فاكرني",
+    "forgotPassword": "نسيت كلمة المرور؟",
+    "login": "تسجيل الدخول",
+    "loggingIn": "جاري تسجيل الدخول...",
+    "loginFailed": "فشل تسجيل الدخول. تحقق من بياناتك.",
+    "networkError": "تعذر الوصول إلى السيرفر. تأكد أن الـ backend يعمل على المنفذ 5000.",
+    "emailRequired": "البريد الإلكتروني مطلوب",
+    "passwordRequired": "كلمة المرور مطلوبة",
+    "invalidEmail": "يرجى إدخال بريد إلكتروني صالح",
+    "newToPlatform": "جديد على هذه المنصة ؟",
+    "createAccount": "إنشاء حساب",
+    "heroTitle": "إصقل تقييمك",
+    "heroTitleAccent": "الأكاديمي",
+    "heroLearners": "12,000+ متعلم انضموا إلينا",
+    "footerSupport": "تواصل مع الدعم",
+    "footerCookies": "ملفات التعريف",
+    "footerTerms": "شروط الخدمة",
+    "footerPrivacy": "سياسة الخصوصية",
+    "footerCopyright": "© 2024 إدو أسبيس. جميع الحقوق محفوظة."
+  },
+  "common": {
+    "language": "اللغة",
+    "english": "English",
+    "arabic": "العربية"
+  }
+}

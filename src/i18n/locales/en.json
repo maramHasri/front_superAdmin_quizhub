@@ -1,0 +1,36 @@
+{
+  "auth": {
+    "brand": "QuizHub",
+    "tagline": "Your academic haven",
+    "title": "System Management Center",
+    "subtitle": "Please sign in using authorized system administrator credentials",
+    "email": "Email",
+    "emailPlaceholder": "dr.smith@university.edu",
+    "password": "Password",
+    "passwordPlaceholder": "••••••••",
+    "rememberMe": "Remember me",
+    "forgotPassword": "Forgot password?",
+    "login": "Sign in",
+    "loggingIn": "Signing in...",
+    "loginFailed": "Login failed. Please check your credentials.",
+    "networkError": "Cannot reach the server. Make sure the backend is running on port 5000.",
+    "emailRequired": "Email is required",
+    "passwordRequired": "Password is required",
+    "invalidEmail": "Please enter a valid email",
+    "newToPlatform": "New to this platform?",
+    "createAccount": "Create account",
+    "heroTitle": "Refine your",
+    "heroTitleAccent": "academic",
+    "heroLearners": "12,000+ learners joined us",
+    "footerSupport": "Contact Support",
+    "footerCookies": "Cookies",
+    "footerTerms": "Terms of Service",
+    "footerPrivacy": "Privacy Policy",
+    "footerCopyright": "© 2024 EduSpace. All rights reserved."
+  },
+  "common": {
+    "language": "Language",
+    "english": "English",
+    "arabic": "Arabic"
+  }
+}
