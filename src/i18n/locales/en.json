@@ -31,6 +31,177 @@
   "common": {
     "language": "Language",
     "english": "English",
-    "arabic": "Arabic"
+    "arabic": "Arabic",
+    "cancel": "Cancel",
+    "loading": "Loading..."
+  },
+  "layout": {
+    "sidebar": {
+      "institutions": "Institutions",
+      "analytics": "Analytics",
+      "users": "Users",
+      "reports": "Reports",
+      "logout": "Log out"
+    },
+    "appbar": {
+      "searchPlaceholder": "Search requests...",
+      "searchUsersPlaceholder": "Search for users...",
+      "notifications": "Notifications",
+      "settings": "Settings",
+      "superAdmin": "Super Admin",
+      "tabs": {
+        "dashboard": "Dashboard",
+        "accreditations": "Accreditations",
+        "audit": "System Audit"
+      }
+    }
+  },
+  "institutions": {
+    "tableTitle": "New Institution Requests",
+    "export": "Export Report",
+    "empty": "No pending requests right now",
+    "stats": {
+      "pending": "Pending Requests",
+      "review": "Awaiting Review"
+    },
+    "columns": {
+      "name": "Institution Name",
+      "owner": "Owner",
+      "contact": "Contact Details",
+      "type": "Type",
+      "date": "Request Date",
+      "actions": "Actions"
+    },
+    "types": {
+      "individual": "Individual",
+      "company": "Company"
+    },
+    "actions": {
+      "approve": "Approve",
+      "approving": "Approving...",
+      "reject": "Reject"
+    },
+    "reject": {
+      "title": "Reject Institution Request",
+      "subtitle": "You are about to reject «{{name}}». Please provide a reason.",
+      "reason": "Rejection reason",
+      "placeholder": "e.g. Incomplete documentation",
+      "reasonRequired": "Rejection reason is required",
+      "rejecting": "Rejecting..."
+    },
+    "pagination": {
+      "summary": "Showing {{shown}} of {{total}} requests"
+    },
+    "errors": {
+      "loadFailed": "Failed to load institution requests",
+      "approveFailed": "Failed to approve request",
+      "rejectFailed": "Failed to reject request"
+    }
+  },
+  "users": {
+    "title": "User Management",
+    "subtitle": "Monitoring and control across {{count}} connected users",
+    "empty": "No matching users right now",
+    "footer": "© 2024 EduSpace. All rights reserved.",
+    "stats": {
+      "totalUsers": "Total Users",
+      "institutions": "Institutions",
+      "suspended": "Banned",
+      "pending": "Pending Verification"
+    },
+    "filters": {
+      "role": "Role",
+      "institution": "Institution",
+      "status": "Status",
+      "allRoles": "All Roles",
+      "allInstitutions": "All Institutions",
+      "allStatuses": "All Statuses"
+    },
+    "columns": {
+      "details": "User Details",
+      "email": "Email",
+      "mobile": "Mobile Number",
+      "status": "Status",
+      "actions": "Actions"
+    },
+    "status": {
+      "ACTIVE": "Active",
+      "SUSPENDED": "Suspended",
+      "PENDING_VERIFICATION": "Pending Verification"
+    },
+    "roles": {
+      "ADMIN": "Admin",
+      "SUPER_ADMIN": "Super Admin",
+      "TEACHER": "Teacher",
+      "STUDENT": "Student"
+    },
+    "actions": {
+      "edit": "Edit",
+      "editData": "Edit data",
+      "suspend": "Suspend",
+      "suspendUser": "Suspend user",
+      "restore": "Restore",
+      "delete": "Delete",
+      "more": "More"
+    },
+    "suspend": {
+      "title": "Suspend User",
+      "subtitle": "You are about to suspend «{{name}}». Please provide a reason.",
+      "reason": "Suspension reason",
+      "placeholder": "e.g. Repeated policy violations",
+      "reasonRequired": "Suspension reason is required",
+      "suspending": "Suspending..."
+    },
+    "edit": {
+      "title": "Edit user data",
+      "subtitle": "Update data for «{{name}}»",
+      "fullName": "Full name",
+      "fullNamePlaceholder": "Enter full name",
+      "phone": "Phone number",
+      "phonePlaceholder": "+963900000000",
+      "nameRequired": "Full name is required",
+      "save": "Save changes",
+      "saving": "Saving..."
+    },
+    "delete": {
+      "title": "Confirm user deletion",
+      "subtitle": "«{{name}}» will be permanently deleted. This action cannot be undone.",
+      "deleting": "Deleting..."
+    },
+    "details": {
+      "backToUsers": "Back to users",
+      "personalInfo": "Personal information",
+      "email": "Email",
+      "phone": "Phone number",
+      "joinedAt": "Join date",
+      "recentActivity": "Recent activity",
+      "lastActivity": "Last activity",
+      "memberships": "Memberships and tracks",
+      "addMembership": "Add membership +",
+      "institution": "Institution",
+      "track": "Track",
+      "role": "Role",
+      "status": "Status",
+      "noMemberships": "No memberships yet"
+    },
+    "membershipStatus": {
+      "ACTIVE": "Active",
+      "DISABLED": "Disabled",
+      "SUSPENDED": "Suspended"
+    },
+    "pagination": {
+      "summary": "Showing {{shown}} of {{total}} users"
+    },
+    "comingSoon": {
+      "addMembership": "Add membership will be connected later"
+    },
+    "errors": {
+      "loadFailed": "Failed to load users",
+      "detailsFailed": "Failed to load user details",
+      "suspendFailed": "Failed to suspend user",
+      "restoreFailed": "Failed to restore user",
+      "updateFailed": "Failed to update user",
+      "deleteFailed": "Failed to delete user"
+    }
   }
 }

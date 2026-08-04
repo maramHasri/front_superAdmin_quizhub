@@ -31,6 +31,177 @@
   "common": {
     "language": "اللغة",
     "english": "English",
-    "arabic": "العربية"
+    "arabic": "العربية",
+    "cancel": "إلغاء",
+    "loading": "جاري التحميل..."
+  },
+  "layout": {
+    "sidebar": {
+      "institutions": "المؤسسات",
+      "analytics": "التحليلات",
+      "users": "المستخدمين",
+      "reports": "البلاغات",
+      "logout": "تسجيل الخروج"
+    },
+    "appbar": {
+      "searchPlaceholder": "البحث في الطلبات...",
+      "searchUsersPlaceholder": "البحث في المستخدمين...",
+      "notifications": "الإشعارات",
+      "settings": "الإعدادات",
+      "superAdmin": "المدير الرئيسي",
+      "tabs": {
+        "dashboard": "لوحة التحكم",
+        "accreditations": "الاعتمادات",
+        "audit": "تدقيق النظام"
+      }
+    }
+  },
+  "institutions": {
+    "tableTitle": "طلبات المؤسسات الجديدة",
+    "export": "تصدير التقرير",
+    "empty": "لا توجد طلبات معلقة حالياً",
+    "stats": {
+      "pending": "طلبات معلقة",
+      "review": "في انتظار المراجعة"
+    },
+    "columns": {
+      "name": "اسم المؤسسة",
+      "owner": "المالك",
+      "contact": "بيانات التواصل",
+      "type": "النوع",
+      "date": "تاريخ الطلب",
+      "actions": "الإجراءات"
+    },
+    "types": {
+      "individual": "فردي",
+      "company": "شركة"
+    },
+    "actions": {
+      "approve": "قبول",
+      "approving": "جاري القبول...",
+      "reject": "رفض"
+    },
+    "reject": {
+      "title": "رفض طلب المؤسسة",
+      "subtitle": "سيتم رفض طلب «{{name}}». يرجى إدخال سبب الرفض.",
+      "reason": "سبب الرفض",
+      "placeholder": "مثال: Incomplete documentation",
+      "reasonRequired": "سبب الرفض مطلوب",
+      "rejecting": "جاري الرفض..."
+    },
+    "pagination": {
+      "summary": "عرض {{shown}} من أصل {{total}} طلب"
+    },
+    "errors": {
+      "loadFailed": "تعذر جلب طلبات المؤسسات",
+      "approveFailed": "فشل قبول الطلب",
+      "rejectFailed": "فشل رفض الطلب"
+    }
+  },
+  "users": {
+    "title": "إدارة المستخدمين",
+    "subtitle": "المراقبة والتحكم عبر {{count}} مستخدم متصل بالنظام",
+    "empty": "لا يوجد مستخدمون مطابقون حالياً",
+    "footer": "© 2024 إدو أسبيس. جميع الحقوق محفوظة.",
+    "stats": {
+      "totalUsers": "إجمالي المستخدمين",
+      "institutions": "عدد المؤسسات",
+      "suspended": "المحظورين",
+      "pending": "بانتظار التحقق"
+    },
+    "filters": {
+      "role": "الدور",
+      "institution": "المؤسسة",
+      "status": "الحالة",
+      "allRoles": "جميع الأدوار",
+      "allInstitutions": "جميع المؤسسات",
+      "allStatuses": "جميع الحالات"
+    },
+    "columns": {
+      "details": "تفاصيل المستخدم",
+      "email": "الايميل",
+      "mobile": "رقم الموبايل",
+      "status": "الحالة",
+      "actions": "الإجراءات"
+    },
+    "status": {
+      "ACTIVE": "نشط",
+      "SUSPENDED": "موقوف",
+      "PENDING_VERIFICATION": "بانتظار التحقق"
+    },
+    "roles": {
+      "ADMIN": "مدير",
+      "SUPER_ADMIN": "سوبر أدمن",
+      "TEACHER": "معلم",
+      "STUDENT": "طالب"
+    },
+    "actions": {
+      "edit": "تعديل",
+      "editData": "تعديل البيانات",
+      "suspend": "حظر",
+      "suspendUser": "حظر المستخدم",
+      "restore": "إزالة الحظر",
+      "delete": "حذف",
+      "more": "المزيد"
+    },
+    "suspend": {
+      "title": "حظر المستخدم",
+      "subtitle": "سيتم حظر «{{name}}». يرجى إدخال سبب الحظر.",
+      "reason": "سبب الحظر",
+      "placeholder": "مثال: Repeated policy violations",
+      "reasonRequired": "سبب الحظر مطلوب",
+      "suspending": "جاري الحظر..."
+    },
+    "edit": {
+      "title": "تعديل بيانات المستخدم",
+      "subtitle": "تعديل بيانات «{{name}}»",
+      "fullName": "الاسم الكامل",
+      "fullNamePlaceholder": "أدخل الاسم الكامل",
+      "phone": "رقم الهاتف",
+      "phonePlaceholder": "+963900000000",
+      "nameRequired": "الاسم الكامل مطلوب",
+      "save": "حفظ التعديلات",
+      "saving": "جاري الحفظ..."
+    },
+    "delete": {
+      "title": "تأكيد حذف المستخدم",
+      "subtitle": "سيتم حذف «{{name}}» نهائياً من النظام. لا يمكن التراجع عن هذا الإجراء.",
+      "deleting": "جاري الحذف..."
+    },
+    "details": {
+      "backToUsers": "العودة للمستخدمين",
+      "personalInfo": "المعلومات الشخصية",
+      "email": "البريد الإلكتروني",
+      "phone": "رقم الهاتف",
+      "joinedAt": "تاريخ الانضمام",
+      "recentActivity": "النشاط الأخير",
+      "lastActivity": "آخر نشاط",
+      "memberships": "العضويات والمسارات",
+      "addMembership": "إضافة عضوية +",
+      "institution": "المؤسسة",
+      "track": "المسار",
+      "role": "الدور",
+      "status": "الحالة",
+      "noMemberships": "لا توجد عضويات حالياً"
+    },
+    "membershipStatus": {
+      "ACTIVE": "نشط",
+      "DISABLED": "معطل",
+      "SUSPENDED": "موقوف"
+    },
+    "pagination": {
+      "summary": "عرض {{shown}} من أصل {{total}} مستخدم"
+    },
+    "comingSoon": {
+      "addMembership": "إضافة عضوية سيتم ربطها لاحقاً"
+    },
+    "errors": {
+      "loadFailed": "تعذر جلب المستخدمين",
+      "detailsFailed": "تعذر جلب تفاصيل المستخدم",
+      "suspendFailed": "فشل حظر المستخدم",
+      "restoreFailed": "فشل إزالة الحظر",
+      "updateFailed": "فشل تحديث بيانات المستخدم",
+      "deleteFailed": "فشل حذف المستخدم"
+    }
   }
 }
