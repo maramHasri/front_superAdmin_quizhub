@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { cn } from "@/lib/utils";
 import StatusBadge from "@/components/StatusBadge";
+import Pagination from "@/components/Pagination";
 import { getInitials } from "@/lib/display";
 
 export default function UsersTable({
@@ -22,13 +23,13 @@ export default function UsersTable({
   const navigate = useNavigate();
 
   return (
-    <section className="rounded-2xl bg-white shadow-[0_8px_24px_rgba(15,23,42,0.04)]">
+    <section className="rounded-2xl bg-white dark:bg-slate-950 shadow-[0_8px_24px_rgba(15,23,42,0.04)]">
       <div className="overflow-x-auto">
         <table className="w-full min-w-[900px] text-start text-sm">
           <thead>
-            <tr className="border-b border-slate-100 text-slate-400">
+            <tr className="border-b border-slate-100 dark:border-slate-800 text-slate-400">
               <th className="px-6 py-4 font-medium">
-                {t("users.columns.details")}
+                {t("users.columns.name")}
               </th>
               <th className="px-4 py-4 font-medium">
                 {t("users.columns.email")}
@@ -64,20 +65,20 @@ export default function UsersTable({
                   <tr
                     key={user.id}
                     onClick={() => navigate(`/users/${user.id}`)}
-                    className="cursor-pointer border-b border-slate-50 transition hover:bg-slate-50/80 last:border-b-0"
+                    className="cursor-pointer border-b border-slate-50 dark:border-slate-800 transition hover:bg-slate-50/80 dark:hover:bg-slate-900/60 last:border-b-0"
                   >
                     <td className="px-6 py-4">
                       <div className="flex items-center gap-3">
-                        <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-slate-100 text-xs font-semibold text-slate-600">
+                        <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 text-xs font-semibold text-slate-600 dark:text-slate-300">
                           {getInitials(user.name || user.email)}
                         </span>
-                        <span className="font-semibold text-slate-800">
+                        <span className="font-semibold text-slate-800 dark:text-slate-100">
                           {user.name || "-"}
                         </span>
                       </div>
                     </td>
 
-                    <td className="px-4 py-4 text-slate-600">{user.email}</td>
+                    <td className="px-4 py-4 text-slate-600 dark:text-slate-300">{user.email}</td>
 
                     <td className="px-4 py-4 text-slate-500">
                       {user.phone_number || user.mobile || "—"}
@@ -119,7 +120,7 @@ export default function UsersTable({
                             label={t("users.actions.suspend")}
                             disabled={isBusy}
                             onClick={() => onSuspend(user)}
-                            className="text-slate-500 hover:bg-slate-100"
+                            className="text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800"
                           >
                             <Ban className="size-4" />
                           </ActionIconButton>
@@ -129,7 +130,7 @@ export default function UsersTable({
                           label={t("users.actions.delete")}
                           disabled={isBusy}
                           onClick={() => onDelete(user)}
-                          className="text-red-500 hover:bg-red-50"
+                          className="text-red-500 hover:bg-red-50 dark:hover:bg-red-950/40"
                         >
                           <Trash2 className="size-4" />
                         </ActionIconButton>
@@ -143,33 +144,13 @@ export default function UsersTable({
         </table>
       </div>
 
-      <div className="flex flex-wrap items-center justify-between gap-3 px-6 py-4">
-        <p className="text-sm text-slate-400">
-          {t("users.pagination.summary", { shown, total })}
-        </p>
-
-        <div className="flex items-center gap-1">
-          {Array.from({ length: pages }, (_, index) => {
-            const pageNumber = index + 1;
-
-            return (
-              <button
-                key={pageNumber}
-                type="button"
-                onClick={() => onPageChange(pageNumber)}
-                className={cn(
-                  "flex size-8 items-center justify-center rounded-lg text-sm font-medium transition",
-                  pageNumber === page
-                    ? "bg-brand text-white"
-                    : "text-slate-500 hover:bg-slate-100"
-                )}
-              >
-                {pageNumber}
-              </button>
-            );
-          })}
-        </div>
-      </div>
+      <Pagination
+        page={page}
+        pages={pages}
+        onPageChange={onPageChange}
+        className="border-t border-slate-100 px-6 py-4 dark:border-slate-800"
+        summary={t("users.pagination.summary", { shown, total })}
+      />
     </section>
   );
 }
@@ -189,7 +170,7 @@ function ActionIconButton({
       disabled={disabled}
       onClick={onClick}
       className={cn(
-        "inline-flex size-9 items-center justify-center rounded-lg border border-slate-200 bg-white text-slate-600 transition disabled:opacity-50",
+        "inline-flex size-9 items-center justify-center rounded-lg border border-slate-200 bg-white text-slate-600 transition disabled:opacity-50 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-300",
         className
       )}
     >

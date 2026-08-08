@@ -28,7 +28,7 @@ export default function UserDetailsHeader({
         </div>
 
         <div>
-          <h1 className="text-2xl font-bold text-slate-800">
+          <h1 className="text-2xl font-bold text-slate-800 dark:text-slate-100">
             {user?.name || "—"}
           </h1>
 
@@ -45,7 +45,7 @@ export default function UserDetailsHeader({
                 label={t(`users.roles.${primaryRole}`, {
                   defaultValue: primaryRole,
                 })}
-                className="bg-slate-100 text-slate-600"
+                className="bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300"
               />
             ) : null}
           </div>

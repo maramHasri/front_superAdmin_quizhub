@@ -45,9 +45,9 @@ export default function ReasonModal({
       <div
         role="dialog"
         aria-modal="true"
-        className="w-full max-w-md rounded-2xl bg-white p-6 shadow-xl"
+        className="w-full max-w-md rounded-2xl bg-white dark:bg-slate-950 p-6 shadow-xl"
       >
-        <h3 className="text-lg font-bold text-slate-800">{title}</h3>
+        <h3 className="text-lg font-bold text-slate-800 dark:text-slate-100">{title}</h3>
         {subtitle ? (
           <p className="mt-2 text-sm text-slate-500">{subtitle}</p>
         ) : null}
@@ -55,7 +55,7 @@ export default function ReasonModal({
         <div className="mt-4 space-y-2 text-start">
           <label
             htmlFor="reason-input"
-            className="text-sm font-medium text-slate-600"
+            className="text-sm font-medium text-slate-600 dark:text-slate-300"
           >
             {reasonLabel}
           </label>
@@ -66,7 +66,7 @@ export default function ReasonModal({
             onValueChange={setReason}
             onChange={(event) => setReason(event.target.value)}
             placeholder={placeholder}
-            className="h-11 rounded-xl border-slate-200 bg-slate-50"
+            className="h-11 rounded-xl border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900"
           />
 
           {error ? (

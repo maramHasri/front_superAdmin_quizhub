@@ -4,17 +4,13 @@ import { useNavigate } from "react-router-dom";
 import LoginHeader from "./LoginHeader";
 import EmailInput from "./EmailInput";
 import PasswordInput from "./passwordInput";
-import LoginOptions from "./LoginOptions";
 import LoginButton from "./LoginButton";
 import { useLogin } from "@/features/auth/hooks/useLogin";
-import { useAuthStore } from "@/features/auth/store/authStore";
 
 export default function LoginForm() {
   const { t } = useTranslation();
   const navigate = useNavigate();
   const loginMutation = useLogin();
-  const rememberMe = useAuthStore((state) => state.rememberMe);
-  const setRememberMe = useAuthStore((state) => state.setRememberMe);
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -81,11 +77,6 @@ export default function LoginForm() {
 
         <PasswordInput value={password} onChange={setPassword} />
 
-        <LoginOptions
-          rememberMe={rememberMe}
-          onRememberMeChange={setRememberMe}
-        />
-
         {error ? (
           <p className="text-start text-sm text-red-600" role="alert">
             {error}
@@ -94,7 +85,7 @@ export default function LoginForm() {
 
         <LoginButton isLoading={loginMutation.isPending} />
 
-        <p className="pt-2 text-center text-sm text-slate-500">
+        <p className="pt-2 text-center text-sm text-slate-500 dark:text-slate-400">
           {t("auth.newToPlatform")}{" "}
           <button
             type="button"

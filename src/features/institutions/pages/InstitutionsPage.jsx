@@ -85,11 +85,7 @@ export default function InstitutionsPage() {
   };
 
   return (
-    <DashboardLayout
-      searchValue={search}
-      onSearchChange={handleSearchChange}
-      activeTab="accreditations"
-    >
+    <DashboardLayout>
       <div className="mx-auto flex max-w-7xl flex-col gap-6">
         <StatsCards totalCount={data?.count ?? institutions.length} />
 
@@ -100,11 +96,11 @@ export default function InstitutionsPage() {
         ) : null}
 
         {isLoading ? (
-          <div className="rounded-2xl bg-white px-6 py-16 text-center text-slate-400 shadow-sm">
+          <div className="rounded-2xl bg-white dark:bg-slate-950 px-6 py-16 text-center text-slate-400 shadow-sm">
             {t("common.loading")}
           </div>
         ) : isError ? (
-          <div className="rounded-2xl bg-white px-6 py-16 text-center text-red-500 shadow-sm">
+          <div className="rounded-2xl bg-white dark:bg-slate-950 px-6 py-16 text-center text-red-500 shadow-sm">
             {error?.response?.data?.message ||
               error?.message ||
               t("institutions.errors.loadFailed")}
@@ -114,6 +110,8 @@ export default function InstitutionsPage() {
             institutions={filteredInstitutions}
             page={page}
             onPageChange={setPage}
+            searchValue={search}
+            onSearchChange={handleSearchChange}
             approvingId={
               approveMutation.isPending ? approveMutation.variables : null
             }

@@ -33,7 +33,13 @@
     "english": "English",
     "arabic": "العربية",
     "cancel": "إلغاء",
-    "loading": "جاري التحميل..."
+    "loading": "جاري التحميل...",
+    "darkMode": "الوضع الداكن",
+    "lightMode": "الوضع الفاتح",
+    "pagination": {
+      "prev": "السابق",
+      "next": "التالي"
+    }
   },
   "layout": {
     "sidebar": {
@@ -46,6 +52,8 @@
     "appbar": {
       "searchPlaceholder": "البحث في الطلبات...",
       "searchUsersPlaceholder": "البحث في المستخدمين...",
+      "searchAnalyticsPlaceholder": "ابحث عن مواد، طلاب، أو نتائج...",
+      "searchReportsPlaceholder": "البحث في التقارير...",
       "notifications": "الإشعارات",
       "settings": "الإعدادات",
       "superAdmin": "المدير الرئيسي",
@@ -115,10 +123,16 @@
       "status": "الحالة",
       "allRoles": "جميع الأدوار",
       "allInstitutions": "جميع المؤسسات",
-      "allStatuses": "جميع الحالات"
+      "allStatuses": "جميع الحالات",
+      "noInstitutions": "لا توجد مؤسسات",
+      "noRoles": "لا توجد أدوار",
+      "noStatuses": "لا توجد حالات",
+      "institutionsPage": "صفحة {{page}} من {{pages}}",
+      "optionsPage": "صفحة {{page}} من {{pages}}"
     },
     "columns": {
-      "details": "تفاصيل المستخدم",
+      "name": "اسم المستخدم",
+      "details": "اسم المستخدم",
       "email": "الايميل",
       "mobile": "رقم الموبايل",
       "status": "الحالة",
@@ -202,6 +216,167 @@
       "restoreFailed": "فشل إزالة الحظر",
       "updateFailed": "فشل تحديث بيانات المستخدم",
       "deleteFailed": "فشل حذف المستخدم"
+    }
+  },
+  "analytics": {
+    "title": "لوحة تحكم السوبر أدمن",
+    "subtitle": "نظرة شاملة على أداء المنصة والمستخدمين والمؤسسات والمحتوى",
+    "summary": {
+      "users": "إجمالي المستخدمين",
+      "organizations": "إجمالي المؤسسات",
+      "content": "إجمالي المحتوى",
+      "attempts": "إجمالي المحاولات",
+      "usersBadge": "+{{count}} جديد",
+      "orgsBadge": "{{count}} جديد",
+      "contentBadge": "{{count}} سؤال",
+      "attemptsBadge": "{{score}}% متوسط"
+    },
+    "categories": {
+      "title": "تفصيل الفئات والبيانات",
+      "students": "الطلاب",
+      "teachers": "المعلمون",
+      "admins": "المدراء",
+      "tests": "الاختبارات",
+      "banks": "بنوك الأسئلة",
+      "studentsSub": "{{percent}}% من الإجمالي",
+      "teachersSub": "تغطية {{count}} مادة",
+      "adminsSub": "{{count}} مؤسسة نشطة",
+      "testsSub": "صلاحيات كاملة",
+      "banksSub": "{{count}} موضوع"
+    },
+    "activity": {
+      "title": "نشاط المنصة",
+      "subtitle": "محاولات الاختبار خلال آخر 12 شهراً",
+      "last12Months": "آخر 12 شهراً",
+      "exportPdf": "تصدير PDF",
+      "empty": "لا توجد بيانات نشاط حالياً"
+    },
+    "quickActions": {
+      "title": "إجراءات سريعة",
+      "addOrganization": "إضافة مؤسسة جديدة",
+      "addOrganizationSub": "تسجيل جهة تعليمية جديدة",
+      "monitoring": "تقارير المراقبة",
+      "monitoringSub": "مراجعة سجلات النزاهة",
+      "invoices": "الفواتير والاشتراكات",
+      "invoicesSub": "إدارة المدفوعات والاشتراكات"
+    },
+    "integrity": {
+      "title": "تقارير النزاهة",
+      "pending": "في الانتظار",
+      "confirmed": "تم تأكيدها",
+      "total": "الإجمالي"
+    },
+    "support": {
+      "title": "بلاغات الدعم",
+      "unread": "بانتظار الرد",
+      "inReview": "قيد المراجعة",
+      "resolved": "تم حلها",
+      "total": "الإجمالي"
+    },
+    "mostActive": {
+      "title": "أكثر المؤسسات نشاطاً",
+      "organization": "المؤسسة",
+      "users": "المستخدمين",
+      "tests": "الاختبارات",
+      "attempts": "المحاولات",
+      "view": "عرض",
+      "empty": "لا توجد مؤسسات نشطة حالياً",
+      "pagination": {
+        "summary": "عرض {{shown}} من أصل {{total}}"
+      }
+    },
+    "comingSoon": {
+      "reports": "تقارير المراقبة سيتم ربطها لاحقاً",
+      "invoices": "الفواتير والاشتراكات سيتم ربطها لاحقاً"
+    },
+    "errors": {
+      "loadFailed": "تعذر جلب بيانات التحليلات"
+    }
+  },
+  "reports": {
+    "department": "قسم الدعم الفني",
+    "title": "البلاغات",
+    "subtitle": "تتبع حالة الاستفسارات والتقارير التقنية والأكاديمية المرسلة إلى فريق الدعم.",
+    "export": "تصدير البلاغات",
+    "empty": "لا توجد بلاغات حالياً",
+    "stats": {
+      "total": "إجمالي التقارير",
+      "inReview": "قيد المراجعة",
+      "awaiting": "بانتظار ردك",
+      "resolved": "تم حلها"
+    },
+    "columns": {
+      "id": "رقم التقرير",
+      "title": "العنوان",
+      "category": "النوع",
+      "submittedAt": "تاريخ الإرسال",
+      "updatedAt": "آخر تحديث",
+      "status": "الحالة",
+      "createdAt": "تاريخ الإنشاء"
+    },
+    "categories": {
+      "TECHNICAL": "تقني",
+      "ACCOUNT": "إداري",
+      "CONTENT": "أكاديمي",
+      "CHEATING": "غش",
+      "OTHER": "أخرى"
+    },
+    "status": {
+      "UNREAD": "بانتظار الرد",
+      "IN_REVIEW": "قيد المراجعة",
+      "REVIEWED": "تم الحل",
+      "REJECTED": "مغلق"
+    },
+    "pagination": {
+      "summary": "عرض {{from}}-{{to}} من أصل {{total}} تقرير",
+      "prev": "السابق",
+      "next": "التالي"
+    },
+    "details": {
+      "title": "تفاصيل التقرير",
+      "back": "العودة لقائمة التقارير",
+      "reportNumber": "تقرير #{{id}}",
+      "createdAtLabel": "تاريخ الإنشاء:",
+      "breadcrumb": {
+        "dashboard": "لوحة التحكم",
+        "support": "تقارير الدعم",
+        "details": "تفاصيل التقرير"
+      },
+      "reporterTitle": "معلومات المبلغ",
+      "fullName": "الاسم الكامل",
+      "email": "البريد الإلكتروني",
+      "role": "الدور",
+      "workspace": "بيئة العمل",
+      "infoTitle": "معلومات البلاغ",
+      "category": "الفئة",
+      "reportTitle": "العنوان",
+      "createdAt": "تاريخ الإنشاء",
+      "updatedAt": "آخر تحديث",
+      "statusLabel": "حالة البلاغ",
+      "descriptionTitle": "الوصف التفصيلي",
+      "noDescription": "لا يوجد وصف تفصيلي لهذا البلاغ.",
+      "updateTitle": "تحديث حالة التقرير",
+      "updateSubtitle": "اختر الحالة الجديدة ثم اضغط تحديث الحالة.",
+      "updateAction": "تحديث الحالة",
+      "updating": "جاري التحديث...",
+      "updateSuccess": "تم تحديث حالة التقرير بنجاح",
+      "statusHint": {
+        "UNREAD": "بانتظار الرد من فريق الدعم",
+        "IN_REVIEW": "قيد المراجعة حالياً من قبل النظام",
+        "REVIEWED": "تم حل البلاغ وإغلاقه",
+        "REJECTED": "تم إغلاق البلاغ دون حل"
+      }
+    },
+    "roles": {
+      "STUDENT": "طالب",
+      "TEACHER": "معلم",
+      "ADMIN": "مدير",
+      "ORGANIZATION_ADMIN": "مدير مؤسسة"
+    },
+    "errors": {
+      "loadFailed": "تعذر جلب البلاغات",
+      "detailsFailed": "تعذر جلب تفاصيل البلاغ",
+      "updateFailed": "فشل تحديث حالة البلاغ"
     }
   }
 }

@@ -45,9 +45,9 @@ export default function EditUserModal({
       <div
         role="dialog"
         aria-modal="true"
-        className="w-full max-w-md rounded-2xl bg-white p-6 shadow-xl"
+        className="w-full max-w-md rounded-2xl bg-white dark:bg-slate-950 p-6 shadow-xl"
       >
-        <h3 className="text-lg font-bold text-slate-800">
+        <h3 className="text-lg font-bold text-slate-800 dark:text-slate-100">
           {t("users.edit.title")}
         </h3>
 
@@ -61,7 +61,7 @@ export default function EditUserModal({
           <div className="space-y-2">
             <label
               htmlFor="edit-full-name"
-              className="text-sm font-medium text-slate-600"
+              className="text-sm font-medium text-slate-600 dark:text-slate-300"
             >
               {t("users.edit.fullName")}
             </label>
@@ -71,14 +71,14 @@ export default function EditUserModal({
               onValueChange={setFullName}
               onChange={(event) => setFullName(event.target.value)}
               placeholder={t("users.edit.fullNamePlaceholder")}
-              className="h-11 rounded-xl border-slate-200 bg-slate-50"
+              className="h-11 rounded-xl border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900"
             />
           </div>
 
           <div className="space-y-2">
             <label
               htmlFor="edit-phone"
-              className="text-sm font-medium text-slate-600"
+              className="text-sm font-medium text-slate-600 dark:text-slate-300"
             >
               {t("users.edit.phone")}
             </label>
@@ -88,7 +88,7 @@ export default function EditUserModal({
               onValueChange={setPhoneNumber}
               onChange={(event) => setPhoneNumber(event.target.value)}
               placeholder={t("users.edit.phonePlaceholder")}
-              className="h-11 rounded-xl border-slate-200 bg-slate-50"
+              className="h-11 rounded-xl border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900"
             />
           </div>
 

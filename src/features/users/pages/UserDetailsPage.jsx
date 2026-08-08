@@ -76,7 +76,7 @@ export default function UserDetailsPage() {
   };
 
   return (
-    <DashboardLayout variant="users">
+    <DashboardLayout>
       <div className="mx-auto flex max-w-7xl flex-col gap-6">
         <button
           type="button"
@@ -88,11 +88,11 @@ export default function UserDetailsPage() {
         </button>
 
         {isLoading ? (
-          <div className="rounded-2xl bg-white px-6 py-16 text-center text-slate-400 shadow-sm">
+          <div className="rounded-2xl bg-white dark:bg-slate-950 px-6 py-16 text-center text-slate-400 shadow-sm">
             {t("common.loading")}
           </div>
         ) : isError ? (
-          <div className="rounded-2xl bg-white px-6 py-16 text-center text-red-500 shadow-sm">
+          <div className="rounded-2xl bg-white dark:bg-slate-950 px-6 py-16 text-center text-red-500 shadow-sm">
             {error?.response?.data?.message ||
               error?.message ||
               t("users.errors.detailsFailed")}

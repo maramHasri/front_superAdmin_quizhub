@@ -12,7 +12,7 @@ export default function LoginOptions({ rememberMe, onRememberMeChange }) {
         aria-checked={rememberMe}
         onClick={() => onRememberMeChange(!rememberMe)}
         className={`relative h-6 w-11 rounded-full transition ${
-          rememberMe ? "bg-brand" : "bg-slate-300"
+          rememberMe ? "bg-brand" : "bg-slate-300 dark:bg-slate-600"
         }`}
       >
         <span
@@ -24,7 +24,7 @@ export default function LoginOptions({ rememberMe, onRememberMeChange }) {
 
       <label
         htmlFor="remember"
-        className="cursor-pointer text-sm text-slate-600"
+        className="cursor-pointer text-sm text-slate-600 dark:text-slate-300"
         onClick={() => onRememberMeChange(!rememberMe)}
       >
         {t("auth.rememberMe")}

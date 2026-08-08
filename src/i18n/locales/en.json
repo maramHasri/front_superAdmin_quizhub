@@ -33,7 +33,13 @@
     "english": "English",
     "arabic": "Arabic",
     "cancel": "Cancel",
-    "loading": "Loading..."
+    "loading": "Loading...",
+    "darkMode": "Dark mode",
+    "lightMode": "Light mode",
+    "pagination": {
+      "prev": "Previous",
+      "next": "Next"
+    }
   },
   "layout": {
     "sidebar": {
@@ -46,6 +52,8 @@
     "appbar": {
       "searchPlaceholder": "Search requests...",
       "searchUsersPlaceholder": "Search for users...",
+      "searchAnalyticsPlaceholder": "Search subjects, students, or results...",
+      "searchReportsPlaceholder": "Search reports...",
       "notifications": "Notifications",
       "settings": "Settings",
       "superAdmin": "Super Admin",
@@ -115,10 +123,16 @@
       "status": "Status",
       "allRoles": "All Roles",
       "allInstitutions": "All Institutions",
-      "allStatuses": "All Statuses"
+      "allStatuses": "All Statuses",
+      "noInstitutions": "No institutions",
+      "noRoles": "No roles",
+      "noStatuses": "No statuses",
+      "institutionsPage": "Page {{page}} of {{pages}}",
+      "optionsPage": "Page {{page}} of {{pages}}"
     },
     "columns": {
-      "details": "User Details",
+      "name": "User Name",
+      "details": "User Name",
       "email": "Email",
       "mobile": "Mobile Number",
       "status": "Status",
@@ -202,6 +216,167 @@
       "restoreFailed": "Failed to restore user",
       "updateFailed": "Failed to update user",
       "deleteFailed": "Failed to delete user"
+    }
+  },
+  "analytics": {
+    "title": "Super Admin Dashboard",
+    "subtitle": "A comprehensive view of platform performance, users, organizations, and content",
+    "summary": {
+      "users": "Total Users",
+      "organizations": "Total Organizations",
+      "content": "Total Content",
+      "attempts": "Total Attempts",
+      "usersBadge": "+{{count}} new",
+      "orgsBadge": "{{count}} new",
+      "contentBadge": "{{count}} questions",
+      "attemptsBadge": "{{score}}% avg"
+    },
+    "categories": {
+      "title": "Category and Data Details",
+      "students": "Students",
+      "teachers": "Teachers",
+      "admins": "Admins",
+      "tests": "Tests",
+      "banks": "Question Banks",
+      "studentsSub": "{{percent}}% of total",
+      "teachersSub": "Covers {{count}} subjects",
+      "adminsSub": "{{count}} active organizations",
+      "testsSub": "Full permissions",
+      "banksSub": "{{count}} topics"
+    },
+    "activity": {
+      "title": "Platform Activity",
+      "subtitle": "Test attempts over the last 12 months",
+      "last12Months": "Last 12 months",
+      "exportPdf": "Export PDF",
+      "empty": "No activity data available"
+    },
+    "quickActions": {
+      "title": "Quick Actions",
+      "addOrganization": "Add New Organization",
+      "addOrganizationSub": "Register a new educational entity",
+      "monitoring": "Monitoring Reports",
+      "monitoringSub": "Review integrity logs",
+      "invoices": "Invoices & Subscriptions",
+      "invoicesSub": "Manage payments and subscriptions"
+    },
+    "integrity": {
+      "title": "Integrity Reports",
+      "pending": "Pending",
+      "confirmed": "Confirmed",
+      "total": "Total"
+    },
+    "support": {
+      "title": "Support Reports",
+      "unread": "Awaiting reply",
+      "inReview": "In Review",
+      "resolved": "Resolved",
+      "total": "Total"
+    },
+    "mostActive": {
+      "title": "Most Active Organizations",
+      "organization": "Organization",
+      "users": "Users",
+      "tests": "Tests",
+      "attempts": "Attempts",
+      "view": "View",
+      "empty": "No active organizations yet",
+      "pagination": {
+        "summary": "Showing {{shown}} of {{total}}"
+      }
+    },
+    "comingSoon": {
+      "reports": "Monitoring reports will be connected later",
+      "invoices": "Invoices and subscriptions will be connected later"
+    },
+    "errors": {
+      "loadFailed": "Failed to load analytics data"
+    }
+  },
+  "reports": {
+    "department": "Technical Support Department",
+    "title": "Reports",
+    "subtitle": "Track the status of technical and academic inquiries sent to the support team.",
+    "export": "Export Reports",
+    "empty": "No reports right now",
+    "stats": {
+      "total": "Total Reports",
+      "inReview": "Under Review",
+      "awaiting": "Awaiting Your Reply",
+      "resolved": "Resolved"
+    },
+    "columns": {
+      "id": "Report ID",
+      "title": "Title",
+      "category": "Type",
+      "submittedAt": "Submission Date",
+      "updatedAt": "Last Update",
+      "status": "Status",
+      "createdAt": "Creation Date"
+    },
+    "categories": {
+      "TECHNICAL": "Technical",
+      "ACCOUNT": "Administrative",
+      "CONTENT": "Academic",
+      "CHEATING": "Cheating",
+      "OTHER": "Other"
+    },
+    "status": {
+      "UNREAD": "Awaiting Reply",
+      "IN_REVIEW": "Under Review",
+      "REVIEWED": "Resolved",
+      "REJECTED": "Closed"
+    },
+    "pagination": {
+      "summary": "Showing {{from}}-{{to}} of {{total}} reports",
+      "prev": "Previous",
+      "next": "Next"
+    },
+    "details": {
+      "title": "Report Details",
+      "back": "Back to reports list",
+      "reportNumber": "Report #{{id}}",
+      "createdAtLabel": "Created at:",
+      "breadcrumb": {
+        "dashboard": "Dashboard",
+        "support": "Support Reports",
+        "details": "Report Details"
+      },
+      "reporterTitle": "Reporter Information",
+      "fullName": "Full Name",
+      "email": "Email",
+      "role": "Role",
+      "workspace": "Workspace",
+      "infoTitle": "Report Information",
+      "category": "Category",
+      "reportTitle": "Title",
+      "createdAt": "Creation Date",
+      "updatedAt": "Last Update",
+      "statusLabel": "Report Status",
+      "descriptionTitle": "Detailed Description",
+      "noDescription": "No detailed description for this report.",
+      "updateTitle": "Update Report Status",
+      "updateSubtitle": "Choose the new status, then click update.",
+      "updateAction": "Update Status",
+      "updating": "Updating...",
+      "updateSuccess": "Report status updated successfully",
+      "statusHint": {
+        "UNREAD": "Awaiting a reply from the support team",
+        "IN_REVIEW": "Currently under review by the system",
+        "REVIEWED": "The report has been resolved",
+        "REJECTED": "The report was closed without resolution"
+      }
+    },
+    "roles": {
+      "STUDENT": "Student",
+      "TEACHER": "Teacher",
+      "ADMIN": "Admin",
+      "ORGANIZATION_ADMIN": "Organization Admin"
+    },
+    "errors": {
+      "loadFailed": "Failed to load reports",
+      "detailsFailed": "Failed to load report details",
+      "updateFailed": "Failed to update report status"
     }
   }
 }

@@ -7,8 +7,8 @@ export default function UserRecentActivity({ user }) {
   const activityAt = user?.last_activity_at || user?.last_login_at || user?.updated_at;
 
   return (
-    <section className="rounded-2xl bg-white p-5 shadow-[0_8px_24px_rgba(15,23,42,0.04)]">
-      <div className="mb-4 flex items-center gap-2 text-slate-700">
+    <section className="rounded-2xl bg-white dark:bg-slate-950 p-5 shadow-[0_8px_24px_rgba(15,23,42,0.04)]">
+      <div className="mb-4 flex items-center gap-2 text-slate-700 dark:text-slate-200">
         <Clock className="size-4 text-brand" />
         <h2 className="text-sm font-semibold">
           {t("users.details.recentActivity")}

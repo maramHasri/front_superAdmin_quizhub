@@ -3,6 +3,9 @@ import LoginPage from "@/features/auth/pages/LoginPage";
 import HomePage from "@/features/home/pages/HomePage";
 import UsersPage from "@/features/users/pages/UsersPage";
 import UserDetailsPage from "@/features/users/pages/UserDetailsPage";
+import AnalyticsPage from "@/features/analytics/pages/AnalyticsPage";
+import ReportsPage from "@/features/reports/pages/ReportsPage";
+import ReportDetailsPage from "@/features/reports/pages/ReportDetailsPage";
 import ProtectedRoute from "@/components/ProtectedRoute";
 
 function App() {
@@ -21,6 +24,15 @@ function App() {
         />
 
         <Route
+          path="/analytics"
+          element={
+            <ProtectedRoute>
+              <AnalyticsPage />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
           path="/users"
           element={
             <ProtectedRoute>
@@ -34,6 +46,24 @@ function App() {
           element={
             <ProtectedRoute>
               <UserDetailsPage />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/reports"
+          element={
+            <ProtectedRoute>
+              <ReportsPage />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/reports/:reportId"
+          element={
+            <ProtectedRoute>
+              <ReportDetailsPage />
             </ProtectedRoute>
           }
         />

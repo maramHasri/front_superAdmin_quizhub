@@ -24,8 +24,8 @@ export default function UserPersonalInfo({ user }) {
   ];
 
   return (
-    <section className="rounded-2xl bg-white p-5 shadow-[0_8px_24px_rgba(15,23,42,0.04)]">
-      <div className="mb-4 flex items-center gap-2 text-slate-700">
+    <section className="rounded-2xl bg-white dark:bg-slate-950 p-5 shadow-[0_8px_24px_rgba(15,23,42,0.04)]">
+      <div className="mb-4 flex items-center gap-2 text-slate-700 dark:text-slate-200">
         <Info className="size-4 text-brand" />
         <h2 className="text-sm font-semibold">
           {t("users.details.personalInfo")}
@@ -36,7 +36,7 @@ export default function UserPersonalInfo({ user }) {
         {fields.map((field) => (
           <div key={field.key}>
             <p className="text-xs text-slate-400">{field.label}</p>
-            <p className="mt-1 text-sm font-medium text-slate-700">
+            <p className="mt-1 text-sm font-medium text-slate-700 dark:text-slate-200">
               {field.value}
             </p>
           </div>

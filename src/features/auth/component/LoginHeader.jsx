@@ -5,7 +5,7 @@ export default function LoginHeader() {
 
   return (
     <div className="mb-8 text-start">
-      <h2 className="text-[1.75rem] font-bold leading-tight text-slate-800">
+      <h2 className="text-[1.75rem] font-bold leading-tight text-slate-800 dark:text-slate-100">
         {t("auth.title")}
       </h2>
 

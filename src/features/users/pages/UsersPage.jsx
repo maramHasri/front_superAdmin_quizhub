@@ -13,7 +13,7 @@ import { useRestoreUser } from "@/features/users/hooks/useRestoreUser";
 import { useUpdateUser } from "@/features/users/hooks/useUpdateUser";
 import { useDeleteUser } from "@/features/users/hooks/useDeleteUser";
 
-const PER_PAGE = 20;
+const PER_PAGE = 10;
 
 export default function UsersPage() {
   const { t } = useTranslation();
@@ -180,14 +180,14 @@ export default function UsersPage() {
 
   return (
     <DashboardLayout
-      variant="users"
+      showSearch
       searchValue={search}
       onSearchChange={setSearch}
       searchPlaceholder={t("layout.appbar.searchUsersPlaceholder")}
     >
       <div className="mx-auto flex max-w-7xl flex-col gap-6">
         <div className="text-start">
-          <h1 className="text-2xl font-bold text-slate-800">
+          <h1 className="text-2xl font-bold text-slate-800 dark:text-slate-100">
             {t("users.title")}
           </h1>
           <p className="mt-1 text-sm text-slate-400">
@@ -220,11 +220,11 @@ export default function UsersPage() {
         ) : null}
 
         {isLoading ? (
-          <div className="rounded-2xl bg-white px-6 py-16 text-center text-slate-400 shadow-sm">
+          <div className="rounded-2xl bg-white dark:bg-slate-950 px-6 py-16 text-center text-slate-400 shadow-sm">
             {t("common.loading")}
           </div>
         ) : isError ? (
-          <div className="rounded-2xl bg-white px-6 py-16 text-center text-red-500 shadow-sm">
+          <div className="rounded-2xl bg-white dark:bg-slate-950 px-6 py-16 text-center text-red-500 shadow-sm">
             {error?.response?.data?.message ||
               error?.message ||
               t("users.errors.loadFailed")}

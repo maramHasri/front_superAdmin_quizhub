@@ -5,8 +5,11 @@ import LanguageDetector from "i18next-browser-languagedetector";
 import en from "./locales/en.json";
 import ar from "./locales/ar.json";
 
+const normalizeLanguage = (language) =>
+  language?.startsWith("ar") ? "ar" : "en";
+
 const applyDocumentDirection = (language) => {
-  const lang = language?.startsWith("ar") ? "ar" : "en";
+  const lang = normalizeLanguage(language);
   document.documentElement.lang = lang;
   document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
 };
@@ -20,18 +23,20 @@ i18n
       ar: { translation: ar },
     },
     fallbackLng: "ar",
-    lng: "ar",
+    supportedLngs: ["ar", "en"],
+    nonExplicitSupportedLngs: true,
+    load: "languageOnly",
     interpolation: {
       escapeValue: false,
     },
     detection: {
       order: ["localStorage", "navigator"],
       caches: ["localStorage"],
+      lookupLocalStorage: "i18nextLng",
     },
   });
 
 applyDocumentDirection(i18n.language);
-
 i18n.on("languageChanged", applyDocumentDirection);
 
 export default i18n;
