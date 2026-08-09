@@ -52,6 +52,7 @@
     "appbar": {
       "searchPlaceholder": "Search requests...",
       "searchUsersPlaceholder": "Search for users...",
+      "searchInstitutionsPlaceholder": "Search institutions...",
       "searchAnalyticsPlaceholder": "Search subjects, students, or results...",
       "searchReportsPlaceholder": "Search reports...",
       "notifications": "Notifications",
@@ -68,6 +69,10 @@
     "tableTitle": "New Institution Requests",
     "export": "Export Report",
     "empty": "No pending requests right now",
+    "tabs": {
+      "requests": "Acceptance Requests",
+      "institutions": "Institutions"
+    },
     "stats": {
       "pending": "Pending Requests",
       "review": "Awaiting Review"
@@ -83,6 +88,12 @@
     "types": {
       "individual": "Individual",
       "company": "Company"
+    },
+    "status": {
+      "ACTIVE": "Active",
+      "SUSPENDED": "Suspended",
+      "PENDING_VERIFICATION": "Pending Verification",
+      "DISABLED": "Disabled"
     },
     "actions": {
       "approve": "Approve",
@@ -100,8 +111,40 @@
     "pagination": {
       "summary": "Showing {{shown}} of {{total}} requests"
     },
+    "all": {
+      "title": "All Institutions",
+      "searchPlaceholder": "Search institutions...",
+      "empty": "No institutions right now",
+      "columns": {
+        "users": "Users",
+        "status": "Status",
+        "createdAt": "Created At"
+      },
+      "pagination": {
+        "summary": "Showing {{shown}} of {{total}} institutions"
+      }
+    },
+    "details": {
+      "back": "Back to institutions",
+      "id": "ID: {{id}}",
+      "createdAtLabel": "Created:",
+      "infoTitle": "Institution Info",
+      "statsTitle": "Institution Stats",
+      "type": "Type",
+      "owner": "Owner",
+      "email": "Email",
+      "phone": "Phone",
+      "placeholderNote": "Remaining details will be wired to the API later.",
+      "stats": {
+        "users": "Users",
+        "tests": "Tests",
+        "attempts": "Attempts"
+      }
+    },
     "errors": {
       "loadFailed": "Failed to load institution requests",
+      "loadAllFailed": "Failed to load institutions",
+      "detailsFailed": "Failed to load institution details",
       "approveFailed": "Failed to approve request",
       "rejectFailed": "Failed to reject request"
     }

@@ -6,6 +6,7 @@ import UserDetailsPage from "@/features/users/pages/UserDetailsPage";
 import AnalyticsPage from "@/features/analytics/pages/AnalyticsPage";
 import ReportsPage from "@/features/reports/pages/ReportsPage";
 import ReportDetailsPage from "@/features/reports/pages/ReportDetailsPage";
+import InstitutionDetailsPage from "@/features/institutions/pages/InstitutionDetailsPage";
 import ProtectedRoute from "@/components/ProtectedRoute";
 
 function App() {
@@ -64,6 +65,15 @@ function App() {
           element={
             <ProtectedRoute>
               <ReportDetailsPage />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/institutions/:institutionId"
+          element={
+            <ProtectedRoute>
+              <InstitutionDetailsPage />
             </ProtectedRoute>
           }
         />

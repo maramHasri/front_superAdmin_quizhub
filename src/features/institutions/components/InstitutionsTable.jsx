@@ -1,7 +1,6 @@
-import { Download, Search } from "lucide-react";
+import { Download } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import Pagination from "@/components/Pagination";
 
 const PAGE_SIZE = 4;
@@ -10,8 +9,6 @@ export default function InstitutionsTable({
   institutions = [],
   page = 1,
   onPageChange,
-  searchValue = "",
-  onSearchChange,
   approvingId,
   onApprove,
   onReject,
@@ -30,26 +27,13 @@ export default function InstitutionsTable({
           {t("institutions.tableTitle")}
         </h2>
 
-        <div className="flex flex-wrap items-center gap-3">
-          <div className="relative min-w-[220px]">
-            <Search className="pointer-events-none absolute start-3 top-1/2 size-4 -translate-y-1/2 text-slate-400" />
-            <Input
-              value={searchValue}
-              onValueChange={onSearchChange}
-              onChange={(event) => onSearchChange?.(event.target.value)}
-              placeholder={t("layout.appbar.searchPlaceholder")}
-              className="h-10 rounded-xl border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 ps-10 text-sm shadow-none"
-            />
-          </div>
-
-          <Button
-            type="button"
-            className="h-10 rounded-xl bg-brand px-4 text-white hover:bg-brand-dark"
-          >
-            <Download className="size-4" />
-            {t("institutions.export")}
-          </Button>
-        </div>
+        <Button
+          type="button"
+          className="h-10 rounded-xl bg-brand px-4 text-white hover:bg-brand-dark"
+        >
+          <Download className="size-4" />
+          {t("institutions.export")}
+        </Button>
       </div>
 
       <div className="overflow-x-auto">

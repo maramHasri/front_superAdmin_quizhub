@@ -16,3 +16,23 @@ export const rejectInstitutionRequest = async ({ userId, reason }) => {
   });
   return data;
 };
+
+/**
+ * Placeholder: replace with real endpoint when available.
+ * Expected shape: { institutions: [...], count?: number }
+ */
+export const fetchAllInstitutions = async () => {
+  // const { data } = await api.get("/admin/institutions");
+  // return data;
+  return null;
+};
+
+/**
+ * Placeholder: replace with real endpoint when available.
+ * Expected shape: institution object
+ */
+export const fetchInstitutionById = async (institutionId) => {
+  // const { data } = await api.get(`/admin/institutions/${institutionId}`);
+  // return data;
+  return { institutionId };
+};

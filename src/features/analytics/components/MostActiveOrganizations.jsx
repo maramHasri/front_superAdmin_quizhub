@@ -31,22 +31,30 @@ export default function MostActiveOrganizations({ organizations = [] }) {
       </div>
 
       <div className="min-h-0 flex-1 overflow-x-auto">
-        <table className="w-full min-w-[480px] table-fixed text-start text-sm">
+        <table className="w-full min-w-[520px] table-fixed text-sm">
+          <colgroup>
+            <col className="w-[34%]" />
+            <col className="w-[18%]" />
+            <col className="w-[18%]" />
+            <col className="w-[18%]" />
+            <col className="w-[12%]" />
+          </colgroup>
+
           <thead>
-            <tr className="bg-slate-50/70 dark:bg-slate-900/70 text-slate-400">
-              <th className="px-4 py-3 font-medium">
+            <tr className="bg-slate-50/70 text-slate-400 dark:bg-slate-900/70">
+              <th className="px-4 py-3 text-start font-medium">
                 {t("analytics.mostActive.organization")}
               </th>
-              <th className="w-20 px-2 py-3 font-medium">
+              <th className="px-2 py-3 text-center font-medium">
                 {t("analytics.mostActive.users")}
               </th>
-              <th className="w-24 px-2 py-3 font-medium">
+              <th className="px-2 py-3 text-center font-medium">
                 {t("analytics.mostActive.tests")}
               </th>
-              <th className="w-24 px-2 py-3 font-medium">
+              <th className="px-2 py-3 text-center font-medium">
                 {t("analytics.mostActive.attempts")}
               </th>
-              <th className="w-12 px-3 py-3 font-medium" />
+              <th className="px-2 py-3" aria-hidden="true" />
             </tr>
           </thead>
 
@@ -71,12 +79,12 @@ export default function MostActiveOrganizations({ organizations = [] }) {
                       "border-b border-slate-50 transition hover:bg-slate-50/80 last:border-b-0 dark:border-slate-800 dark:hover:bg-slate-900/60"
                     )}
                   >
-                    <td className="px-4 py-3">
-                      <div className="flex items-center gap-2.5">
+                    <td className="px-4 py-3 text-start">
+                      <div className="flex min-w-0 items-center gap-2.5">
                         <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-brand/10 text-[10px] font-semibold text-brand">
                           {getInitials(org.organization_name)}
                         </span>
-                        <div className="min-w-0">
+                        <div className="min-w-0 text-start">
                           <p className="truncate text-sm font-semibold text-slate-800 dark:text-slate-100">
                             {org.organization_name}
                           </p>
@@ -87,25 +95,25 @@ export default function MostActiveOrganizations({ organizations = [] }) {
                       </div>
                     </td>
 
-                    <td className="px-2 py-3 font-medium text-slate-600 dark:text-slate-300">
+                    <td className="px-2 py-3 text-center font-medium tabular-nums text-slate-600 dark:text-slate-300">
                       {formatNumber(org.active_users ?? 0, i18n.language)}
                     </td>
 
-                    <td className="px-2 py-3 font-medium text-slate-600 dark:text-slate-300">
+                    <td className="px-2 py-3 text-center font-medium tabular-nums text-slate-600 dark:text-slate-300">
                       {formatNumber(org.tests_count ?? 0, i18n.language)}
                     </td>
 
-                    <td className="px-2 py-3 font-medium text-slate-600 dark:text-slate-300">
+                    <td className="px-2 py-3 text-center font-medium tabular-nums text-slate-600 dark:text-slate-300">
                       {formatCompactNumber(
                         org.attempts_count ?? 0,
                         i18n.language
                       )}
                     </td>
 
-                    <td className="px-3 py-3 text-end">
+                    <td className="px-2 py-3 text-center">
                       <button
                         type="button"
-                        className="inline-flex size-7 items-center justify-center rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 text-slate-400 transition hover:border-brand/30 hover:bg-brand/5 hover:text-brand"
+                        className="inline-flex size-7 items-center justify-center rounded-lg border border-slate-200 bg-white text-slate-400 transition hover:border-brand/30 hover:bg-brand/5 hover:text-brand dark:border-slate-700 dark:bg-slate-950"
                         aria-label={t("analytics.mostActive.view")}
                       >
                         <Eye className="size-3.5" />

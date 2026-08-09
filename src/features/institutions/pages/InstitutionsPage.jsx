@@ -1,29 +1,44 @@
 import { useMemo, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import DashboardLayout from "@/components/layout/DashboardLayout";
 import StatsCards from "@/features/institutions/components/StatsCards";
+import InstitutionsTabs from "@/features/institutions/components/InstitutionsTabs";
 import InstitutionsTable from "@/features/institutions/components/InstitutionsTable";
+import AllInstitutionsTable from "@/features/institutions/components/AllInstitutionsTable";
 import RejectModal from "@/features/institutions/components/RejectModal";
 import { usePendingInstitutions } from "@/features/institutions/hooks/usePendingInstitutions";
+import { useAllInstitutions } from "@/features/institutions/hooks/useAllInstitutions";
 import { useApproveInstitution } from "@/features/institutions/hooks/useApproveInstitution";
 import { useRejectInstitution } from "@/features/institutions/hooks/useRejectInstitution";
 
+const TAB_REQUESTS = "requests";
+const TAB_INSTITUTIONS = "institutions";
+
 export default function InstitutionsPage() {
   const { t } = useTranslation();
+  const [searchParams, setSearchParams] = useSearchParams();
+  const activeTab =
+    searchParams.get("tab") === TAB_INSTITUTIONS
+      ? TAB_INSTITUTIONS
+      : TAB_REQUESTS;
+
   const [search, setSearch] = useState("");
+  const [allSearch, setAllSearch] = useState("");
   const [page, setPage] = useState(1);
   const [rejectTarget, setRejectTarget] = useState(null);
   const [actionError, setActionError] = useState("");
 
-  const { data, isLoading, isError, error } = usePendingInstitutions();
+  const pendingQuery = usePendingInstitutions();
+  const allQuery = useAllInstitutions();
   const approveMutation = useApproveInstitution();
   const rejectMutation = useRejectInstitution();
 
-  const institutions = data?.institutions ?? [];
+  const institutions = pendingQuery.data?.institutions ?? [];
+  const allInstitutions = allQuery.data?.institutions ?? [];
 
   const filteredInstitutions = useMemo(() => {
     const query = search.trim().toLowerCase();
-
     if (!query) return institutions;
 
     return institutions.filter((item) => {
@@ -42,7 +57,16 @@ export default function InstitutionsPage() {
     });
   }, [institutions, search]);
 
+  const handleTabChange = (tab) => {
+    setSearchParams(tab === TAB_INSTITUTIONS ? { tab } : {});
+  };
+
   const handleSearchChange = (value) => {
+    if (activeTab === TAB_INSTITUTIONS) {
+      setAllSearch(value);
+      return;
+    }
+
     setSearch(value);
     setPage(1);
   };
@@ -84,10 +108,28 @@ export default function InstitutionsPage() {
     );
   };
 
+  const tabs = [
+    { key: TAB_REQUESTS, label: t("institutions.tabs.requests") },
+    { key: TAB_INSTITUTIONS, label: t("institutions.tabs.institutions") },
+  ];
+
   return (
-    <DashboardLayout>
+    <DashboardLayout
+      showSearch
+      searchValue={activeTab === TAB_INSTITUTIONS ? allSearch : search}
+      onSearchChange={handleSearchChange}
+      searchPlaceholder={
+        activeTab === TAB_INSTITUTIONS
+          ? t("layout.appbar.searchInstitutionsPlaceholder")
+          : t("layout.appbar.searchPlaceholder")
+      }
+    >
       <div className="mx-auto flex max-w-7xl flex-col gap-6">
-        <StatsCards totalCount={data?.count ?? institutions.length} />
+        {activeTab === TAB_REQUESTS ? (
+          <StatsCards
+            totalCount={pendingQuery.data?.count ?? institutions.length}
+          />
+        ) : null}
 
         {actionError ? (
           <p className="text-sm text-red-600" role="alert">
@@ -95,30 +137,53 @@ export default function InstitutionsPage() {
           </p>
         ) : null}
 
-        {isLoading ? (
-          <div className="rounded-2xl bg-white dark:bg-slate-950 px-6 py-16 text-center text-slate-400 shadow-sm">
-            {t("common.loading")}
-          </div>
-        ) : isError ? (
-          <div className="rounded-2xl bg-white dark:bg-slate-950 px-6 py-16 text-center text-red-500 shadow-sm">
-            {error?.response?.data?.message ||
-              error?.message ||
-              t("institutions.errors.loadFailed")}
-          </div>
-        ) : (
-          <InstitutionsTable
-            institutions={filteredInstitutions}
-            page={page}
-            onPageChange={setPage}
-            searchValue={search}
-            onSearchChange={handleSearchChange}
-            approvingId={
-              approveMutation.isPending ? approveMutation.variables : null
-            }
-            onApprove={handleApprove}
-            onReject={setRejectTarget}
+        <div className="flex flex-col gap-4">
+          <InstitutionsTabs
+            activeTab={activeTab}
+            onChange={handleTabChange}
+            tabs={tabs}
           />
-        )}
+
+          {activeTab === TAB_REQUESTS ? (
+            pendingQuery.isLoading ? (
+              <div className="rounded-2xl bg-white px-6 py-16 text-center text-slate-400 shadow-sm dark:bg-slate-950">
+                {t("common.loading")}
+              </div>
+            ) : pendingQuery.isError ? (
+              <div className="rounded-2xl bg-white px-6 py-16 text-center text-red-500 shadow-sm dark:bg-slate-950">
+                {pendingQuery.error?.response?.data?.message ||
+                  pendingQuery.error?.message ||
+                  t("institutions.errors.loadFailed")}
+              </div>
+            ) : (
+              <InstitutionsTable
+                institutions={filteredInstitutions}
+                page={page}
+                onPageChange={setPage}
+                approvingId={
+                  approveMutation.isPending ? approveMutation.variables : null
+                }
+                onApprove={handleApprove}
+                onReject={setRejectTarget}
+              />
+            )
+          ) : allQuery.isLoading ? (
+            <div className="rounded-2xl bg-white px-6 py-16 text-center text-slate-400 shadow-sm dark:bg-slate-950">
+              {t("common.loading")}
+            </div>
+          ) : allQuery.isError ? (
+            <div className="rounded-2xl bg-white px-6 py-16 text-center text-red-500 shadow-sm dark:bg-slate-950">
+              {allQuery.error?.response?.data?.message ||
+                allQuery.error?.message ||
+                t("institutions.errors.loadAllFailed")}
+            </div>
+          ) : (
+            <AllInstitutionsTable
+              institutions={allInstitutions}
+              searchValue={allSearch}
+            />
+          )}
+        </div>
       </div>
 
       <RejectModal

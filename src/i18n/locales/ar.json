@@ -52,6 +52,7 @@
     "appbar": {
       "searchPlaceholder": "البحث في الطلبات...",
       "searchUsersPlaceholder": "البحث في المستخدمين...",
+      "searchInstitutionsPlaceholder": "البحث في المؤسسات...",
       "searchAnalyticsPlaceholder": "ابحث عن مواد، طلاب، أو نتائج...",
       "searchReportsPlaceholder": "البحث في التقارير...",
       "notifications": "الإشعارات",
@@ -68,6 +69,10 @@
     "tableTitle": "طلبات المؤسسات الجديدة",
     "export": "تصدير التقرير",
     "empty": "لا توجد طلبات معلقة حالياً",
+    "tabs": {
+      "requests": "طلبات القبول",
+      "institutions": "المؤسسات"
+    },
     "stats": {
       "pending": "طلبات معلقة",
       "review": "في انتظار المراجعة"
@@ -83,6 +88,12 @@
     "types": {
       "individual": "فردي",
       "company": "شركة"
+    },
+    "status": {
+      "ACTIVE": "نشط",
+      "SUSPENDED": "موقوف",
+      "PENDING_VERIFICATION": "بانتظار التحقق",
+      "DISABLED": "معطل"
     },
     "actions": {
       "approve": "قبول",
@@ -100,8 +111,40 @@
     "pagination": {
       "summary": "عرض {{shown}} من أصل {{total}} طلب"
     },
+    "all": {
+      "title": "جميع المؤسسات",
+      "searchPlaceholder": "البحث في المؤسسات...",
+      "empty": "لا توجد مؤسسات حالياً",
+      "columns": {
+        "users": "عدد المستخدمين",
+        "status": "الحالة",
+        "createdAt": "تاريخ الإنشاء"
+      },
+      "pagination": {
+        "summary": "عرض {{shown}} من أصل {{total}} مؤسسة"
+      }
+    },
+    "details": {
+      "back": "العودة إلى المؤسسات",
+      "id": "المعرف: {{id}}",
+      "createdAtLabel": "تاريخ الإنشاء:",
+      "infoTitle": "معلومات المؤسسة",
+      "statsTitle": "إحصائيات المؤسسة",
+      "type": "النوع",
+      "owner": "المالك",
+      "email": "البريد الإلكتروني",
+      "phone": "رقم الجوال",
+      "placeholderNote": "سيتم ربط باقي التفاصيل مع الـ API لاحقاً.",
+      "stats": {
+        "users": "المستخدمون",
+        "tests": "الاختبارات",
+        "attempts": "المحاولات"
+      }
+    },
     "errors": {
       "loadFailed": "تعذر جلب طلبات المؤسسات",
+      "loadAllFailed": "تعذر جلب قائمة المؤسسات",
+      "detailsFailed": "تعذر جلب تفاصيل المؤسسة",
       "approveFailed": "فشل قبول الطلب",
       "rejectFailed": "فشل رفض الطلب"
     }
