@@ -5,7 +5,7 @@
     "title": "System Management Center",
     "subtitle": "Please sign in using authorized system administrator credentials",
     "email": "Email",
-    "emailPlaceholder": "dr.smith@university.edu",
+    "emailPlaceholder": "name@example.com",
     "password": "Password",
     "passwordPlaceholder": "••••••••",
     "rememberMe": "Remember me",

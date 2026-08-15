@@ -5,7 +5,7 @@
     "title": "مركز إدارة النظام",
     "subtitle": "الرجاء تسجيل الدخول باستخدام بيانات مدير النظام المصرّح بها",
     "email": "البريد الإلكتروني",
-    "emailPlaceholder": "dr.smith@university.edu",
+    "emailPlaceholder": "name@example.com",
     "password": "كلمة سر",
     "passwordPlaceholder": "••••••••",
     "rememberMe": "خليك فاكرني",
