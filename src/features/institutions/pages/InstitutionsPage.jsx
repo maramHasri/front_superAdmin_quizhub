@@ -125,11 +125,9 @@ export default function InstitutionsPage() {
       }
     >
       <div className="mx-auto flex max-w-7xl flex-col gap-6">
-        {activeTab === TAB_REQUESTS ? (
-          <StatsCards
-            totalCount={pendingQuery.data?.count ?? institutions.length}
-          />
-        ) : null}
+        <StatsCards
+          totalCount={pendingQuery.data?.count ?? institutions.length}
+        />
 
         {actionError ? (
           <p className="text-sm text-red-600" role="alert">
